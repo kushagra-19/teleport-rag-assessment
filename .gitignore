@@ -26,5 +26,4 @@ Thumbs.db
 .env
 *.env
 
-# Personal notes (not for submission)
-IMPLEMENTATION_NOTES.md
+
