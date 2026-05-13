@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #080810;
+    color: #e2e8f0;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f0f1a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2d2d52;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7c3aed;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-bg-surface border border-border rounded-xl p-5;
+  }
+
+  .card-elevated {
+    @apply bg-bg-elevated border border-border rounded-xl p-5;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-mono font-medium;
+  }
+
+  .badge-violet {
+    @apply badge bg-accent-violet/15 text-accent-violet-glow border border-accent-violet/30;
+  }
+
+  .badge-cyan {
+    @apply badge bg-accent-cyan/15 text-accent-cyan-glow border border-accent-cyan/30;
+  }
+
+  .badge-green {
+    @apply badge bg-accent-green/15 text-accent-green border border-accent-green/30;
+  }
+
+  .badge-amber {
+    @apply badge bg-accent-amber/15 text-accent-amber border border-accent-amber/30;
+  }
+
+  .btn-primary {
+    @apply flex items-center gap-2 px-4 py-2 bg-accent-violet hover:bg-accent-violet-dim
+           text-white font-medium rounded-lg transition-all duration-200
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply flex items-center gap-2 px-3 py-2 bg-transparent hover:bg-bg-hover
+           text-text-secondary hover:text-text-primary border border-border hover:border-border-bright
+           font-medium rounded-lg transition-all duration-200;
+  }
+
+  .score-bar-bg {
+    @apply h-1.5 rounded-full bg-bg-primary overflow-hidden;
+  }
+
+  .score-bar-fill {
+    @apply h-full rounded-full bg-gradient-to-r from-accent-cyan-dim to-accent-cyan-glow transition-all duration-700;
+  }
+
+  .tab-active {
+    @apply bg-accent-violet text-white border-accent-violet;
+  }
+
+  .tab-inactive {
+    @apply bg-transparent text-text-secondary border-border hover:border-border-bright hover:text-text-primary;
+  }
+}
